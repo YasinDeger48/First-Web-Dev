@@ -1,0 +1,115 @@
+@import 'base.sass';
+@import '~bootstrap/scss/bootstrap.scss';
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+$font-family: 'Lato', sans-serif;
+$text-color: #2e0707 
+$primary-color: #2f1130
+
+html 
+  box-sizing: border-box
+
+
+html,
+body 
+  margin: 0;
+  padding: 0;
+  height: 100%;
+
+.btn-primary
+  background-color: $primary-color
+  border: none
+  cursor: pointer
+  &:hover
+    background-color: #000
+  
+
+
+*,
+*:before,
+*:after 
+  box-sizing: inherit;
+
+header
+  background-color: #FFF
+  box-shadow: 3px 0 8px rgba(0,0,0,0.3)
+  position: fixed
+  width: 100%
+  margin-left: -128px
+  
+
+  .navbar-brand
+    color:#86bc42 
+      font-family: $font-family
+    
+
+  .nav-link
+    
+    color: $text-color
+      font-family: $font-family
+         
+    &:hover
+      font-weight: bold 
+      color:#86bc42
+         
+  .active
+    color:#96eb0e
+
+  .navbar-collapse
+    flex-basis: 100%
+    @media (min-width: 992px)
+      flex-basis: auto
+
+.navbar-toggler
+  border-width: 0px
+  .navbar-toggler-icon
+    background-image:url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba(255, 255, 255, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E")
+
+.home-container
+  background-image: url("../styles/image/edu.jpg")
+  height: 800px
+  background-size: cover
+  padding-top: 60px
+  border: 2px solid #8b8686
+
+  form
+    width: 516px
+    margin-left: 60px
+    margin-top: 60px
+
+  h1
+    text-align: center
+    color: #fff
+    font-family: $font-family
+    text-transform: uppercase
+    text-shadow: 3px 0 15px rgba(0,0,0,0.3)
+    padding-top: 50px
+    margin-left: -450px
+  
+  h2
+    text-align: center
+    margin-left: -880px
+    color: #fff
+    font-family: $font-family
+    text-transform: uppercase
+    text-shadow: 3px 0 15px rgba(0,0,0,0.3)
+    padding-top: 5px
+    font-size: 20px
+
+  a
+    color: #000000
+    margin-left: 10px
+    font-size: 14px
+    font-weight: bold
+
+  p
+    margin-left: 62px
+    font-weight: bold
+    
+    margin-top: 50px
+   
+
+  .click
+    color: #fff
+    font-weight: bolder
+    
