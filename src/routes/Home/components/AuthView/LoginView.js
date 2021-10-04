@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { connect } from 'react-redux';
 import {userInit } from 'store/userReducer';
+import { post } from "../../../../utils/httpHelper";
 
 class LoginView extends React.Component {
 
@@ -30,14 +31,22 @@ class LoginView extends React.Component {
 
   onUserClick(){
     //http call
-    console.log(this.state);
     const user = {
-        name : "Yasin DEĞER",
-        email : "yd@gmail.com",
-        age : 35,
-        gender: "male"
+
+        email: this.state.email,
+        password :this.state.password
     }
-    this.props.loginUserData(user);
+    post('auth/login',user).then(res =>{
+
+        if(res.status){
+          localStorage.setItem('userToken',res.token);
+          this.props.userInit({email :user.email});
+          //dashboard routing
+        } else {
+          alert(res.message);
+        }
+    });
+    // 
   }
 
 
@@ -108,7 +117,7 @@ const mapStateToProps =(state) => {
 }
 const mapDispatchToProps = (dispatch) => {
     return {
-      loginUserData : (user) => dispatch(userInit(user))
+      userInit : (user) => dispatch(userInit(user))
     }
 }
 export default connect(mapStateToProps, mapDispatchToProps)(LoginView)

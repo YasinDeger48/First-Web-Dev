@@ -8,10 +8,10 @@ class SignUpView extends React.Component {
         super();
 
         this.state = {
-            email: "",
-            password: "",
+            email: '',
+            password: '',
             hasError: false,
-            errorMessage: ""
+            errorMessage: ''
         }
     }
 
@@ -24,17 +24,38 @@ class SignUpView extends React.Component {
     onSignUp(e) {
         e.preventDefault();
 
+        if(this.state.email === "" || this.state.password === ""){
+
+            this.setState({
+                hasError :true,
+                errorMessage : "please fill all fields !"
+            });
+            return;
+        }
+
         Http.post (`auth/sign-up`, this.state)
             .then(res => {
-                console.log(res);
+                console.log('res',res);
+
+                if(!res.status){
+                    this.setState({
+                    hasError : !res.status,
+                    errorMessage : res.error.code === 11000 ? 'This email address is registered!!' : 'An unexpected error has occurred'
+                    })
+                }
+               
             });
 
         
           }
+
+          renderError(){
+              return <div className="alert alert-danger" style={{margin: "5px 807px 5px 59px"}}>{this.state.errorMessage}</div>
+          }
        
     render() {
         const { onViewChange } = this.props;
-        
+        const Error =this.renderError.bind(this);
 
         return (
             <div>
@@ -45,7 +66,7 @@ class SignUpView extends React.Component {
                     <div className="form-group mx-sm-3">
                         <input type="password" name="password" className="form-control" value={this.state.password} onChange={this.onInputChanged.bind(this)} />
                     </div>
-                    <button type="submit" className="btn btn-primary">Register</button>
+                    <button type="submit" className="btn btn-primary" style={{margin: "5px"}}>Register</button>
                 </form>
 
                 {this.state.hasError ? <Error /> : null}

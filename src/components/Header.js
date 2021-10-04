@@ -23,7 +23,7 @@ class Header extends React.Component{
   
 
   return (
-    <header>
+    <header style={{marginleft: "50px"}}>
       <nav className="navbar navbar-expand-lg justify-content-between">
         <a className="navbar-brand" href="#">
           Learn English
@@ -32,7 +32,7 @@ class Header extends React.Component{
     <span className="navbar-toggler-icon"></span>
   </button>
 
-  <div className="navbar-collapse" style={{display:this.state.isNavOpen ? "block" : "none"}}>
+  <div className="navbar-collapse" style={{display:this.state.isNavOpen ? "block" : "none", marginleft: "800px"}} >
         <ul className="navbar-nav">
           <li className="nav-item">
           <Link to="/" activeClassName="active" className="nav-link">HOME </Link>
