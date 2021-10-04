@@ -1,11 +1,6 @@
 # Learn English with TOMMY
 ## **Easy Learning Methods**
-#_Sign-In Screenshot_
-![Resim1](https://user-images.githubusercontent.com/87366280/135854067-e1108acb-ebd1-4be2-8a58-0693e5ed325b.gif)
-#_Sign-Up Screenshot_
-![Resim2](https://user-images.githubusercontent.com/87366280/135854460-b87d6db7-6767-4860-a1a3-b33efc5b92dd.gif)
-#_Password Reset Screenshot_
-![Resim3](https://user-images.githubusercontent.com/87366280/135854678-e1412c06-a4ab-4014-ac4f-a21b0104c4df.gif)
+![Login Animation](Animation.gif) 
 
 -------------------------
 # Built With
