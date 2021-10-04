@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { connect } from 'react-redux';
 import {userInit } from 'store/userReducer';
 import { post } from "../../../../utils/httpHelper";
+import { browserHistory } from 'react-router';
 
 class LoginView extends React.Component {
 
@@ -42,6 +43,7 @@ class LoginView extends React.Component {
           localStorage.setItem('userToken',res.token);
           this.props.userInit({email :user.email});
           //dashboard routing
+          browserHistory.push('/app');
         } else {
           alert(res.message);
         }
